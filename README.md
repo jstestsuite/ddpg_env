@@ -4,7 +4,7 @@ Inital version.  Currently runs DDPG using Keras/Tensorflow using ROS and Turtle
 
 The code is based on: https://github.com/ROBOTIS-GIT/turtlebot3_machine_learning
 
-The changes made are to use DDPG instead of DPG for the reenforcment algorithm.  The environment manipulator was also rewritten in C++ using boost python.  
+The changes made are to use DDPG instead of DPG for the reinforcment algorithm.  The environment manipulator was also rewritten in C++ using boost python (done as a learning excercise).  
 
 The Gazebo simulator was accelerated to shorten training time. 
 
