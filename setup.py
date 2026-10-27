@@ -1,12 +1,29 @@
-## ! DO NOT MANUALLY INVOKE THIS setup.py, USE CATKIN INSTEAD
+from glob import glob
 
-from distutils.core import setup
-from catkin_pkg.python_setup import generate_distutils_setup
+from setuptools import setup
 
-# fetch values from package.xml
-setup_args = generate_distutils_setup(
-    packages=['ddpg_cenv'],
-    package_dir={'': 'src'},
+package_name = 'ddpg_env'
+
+setup(
+    name=package_name,
+    version='0.2.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', glob('launch/*.launch.py')),
+        ('share/' + package_name + '/config', glob('config/*.yaml')),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='justin',
+    maintainer_email='jsteele171@gmail.com',
+    description='DDPG (PyTorch) goal-reaching agent for TurtleBot3 in Gazebo',
+    license='Apache-2.0',
+    entry_points={
+        'console_scripts': [
+            'train = ddpg_env.train:main',
+            'plot = ddpg_env.plot:main',
+        ],
+    },
 )
-
-setup(**setup_args)

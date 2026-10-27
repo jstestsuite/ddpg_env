@@ -1,13 +1,23 @@
 <?xml version="1.0"?>
-<package format="2">
-  <name>ddpg_cenv</name>
-  <version>0.0.0</version>
-  <description>The ddpg_cenv package</description>
-  
-  <maintainer email="justin@todo.todo">justin</maintainer>
-  <license>TODO</license>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ddpg_env</name>
+  <version>0.2.0</version>
+  <description>DDPG (PyTorch) goal-reaching agent for TurtleBot3 in Gazebo, ROS 2 Jazzy</description>
+  <maintainer email="jsteele171@gmail.com">justin</maintainer>
+  <license>Apache-2.0</license>
 
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>turtlebot3_gazebo</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>ros_gz_interfaces</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
 
-  <buildtool_depend>catkin</buildtool_depend>
-
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
 </package>

@@ -1,0 +1,18 @@
+# Steering only, fixed forward speed. The sanity check: if this converges,
+# the environment, reward and critic are sound.
+# Every key is optional; defaults are in ddpg_env/train.py (DEFAULTS).
+# Keep float values written as floats (100.0, not 100); ROS parameters are strictly typed.
+ddpg_env:
+  ros__parameters:
+    mode: steer
+    fixed_linear: 0.15
+    max_angular: 1.5
+    episodes: 1000
+    max_steps: 500
+    progress_scale: 40.0
+    time_penalty: 0.05
+    goal_reward: 100.0
+    collision_reward: -100.0
+    noise_start: 0.4
+    noise_end: 0.05
+    noise_decay_steps: 50000

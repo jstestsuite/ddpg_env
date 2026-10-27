@@ -1,0 +1,15 @@
+# Steering + linear speed (0 to max_linear). Run after steer.yaml converges.
+ddpg_env:
+  ros__parameters:
+    mode: steer_speed
+    max_linear: 0.22
+    max_angular: 1.5
+    episodes: 1500
+    max_steps: 500
+    progress_scale: 40.0
+    time_penalty: 0.05
+    goal_reward: 100.0
+    collision_reward: -100.0
+    noise_start: 0.4
+    noise_end: 0.05
+    noise_decay_steps: 80000
